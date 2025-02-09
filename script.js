@@ -85,7 +85,7 @@ async function submitTopic() {
 
   try {
       // First request
-      const response = await fetch('http://trivy-study.loca.lt/generate-questions', {
+      const response = await fetch('https://trivy-study.loca.lt/generate-questions', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ async function submitTopic() {
       const data = await response.json();
 
       // Second request
-      const response1 = await fetch('http://trivy-study.loca.lt/generate-upgrades', {
+      const response1 = await fetch('https://trivy-study.loca.lt/generate-upgrades', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
