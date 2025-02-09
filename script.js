@@ -149,7 +149,7 @@ function processReceivedQuestions(data) {
   canvas.height = canvas.offsetHeight;
   
   let gameState = {
-    points: 100000000,
+    points: 100,
     pointsPerAnswer: 1,
     autoPointsPerSecond: 0,
     buildings: [],
