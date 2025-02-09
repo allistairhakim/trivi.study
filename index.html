@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>TrivyAI</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<body>
+  <div id="topicOverlay" class="overlay">
+    <div class="overlay-content">
+      <h2>Choose Your Topic</h2>
+      <input type="text" id="topicInput" placeholder="Enter a topic (e.g., 'World History')">
+      <button onclick="submitTopic()">Start Game</button>
+      <div id="loadingSpinner" class="spinner" style="display: none;">
+        <div class="loader" style="margin: 0 auto;"></div>
+        <br>
+        Loading... 
+        <span id="elapsedTime">0s</span>
+        <span id="etaDisplay">Estimated: Calculating...</span><br>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="display:none;" id="gameContainer">
+    <div class="header">
+      <h1>TrivyAI</h1>
+      <div class="stats">
+        <div>Points: <span id="points">0</span></div>
+        <div>Points per Answer: <span id="pointsPerAnswer">1</span></div>
+        <div>Auto Points/sec: <span id="autoPointsPerSecond">0</span></div>
+      </div>
+    </div>
+    
+    <div class="game-area">
+      <div class="upgrades">
+        <h2>Point Multipliers</h2>
+        <div class="upgrade-item">
+          <button onclick="window.buyUpgrade('doublePoints')">
+            Double Points<br>
+            Cost: <span id="doublePointsCost">10</span><br>
+            Level: <span id="doublePointsLevel">0</span>
+          </button>
+        </div>
+        <div class="upgrade-item">
+          <button onclick="window.buyUpgrade('smartBrain')">
+            Smart Brain<br>
+            Cost: <span id="smartBrainCost">50</span><br>
+            Level: <span id="smartBrainLevel">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="canvas-container">
+          <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="question-section">
+          <div id="question"></div>
+          <div class="options" id="options"></div>
+        </div>
+      </div>
+
+      <div class="upgrades">
+        <h2>Auto Generators</h2>
+        <div class="upgrade-item">
+          <button onclick="window.buyUpgrade('autoClicker')">
+            Auto Clicker<br>
+            Cost: <span id="autoClickerCost">30</span><br>
+            Level: <span id="autoClickerLevel">0</span>
+          </button>
+        </div>
+        <div class="upgrade-item">
+          <button onclick="window.buyUpgrade('autoSolver')">
+            Auto Solver<br>
+            Cost: <span id="autoSolverCost">100</span><br>
+            Level: <span id="autoSolverLevel">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
