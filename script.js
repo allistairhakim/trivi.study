@@ -1,6 +1,6 @@
 let startTime;
 let elapsedInterval;
-let estimatedTime = 20; // Estimated time in seconds
+let estimatedTime = 40; // Estimated time in seconds
 let images = []
 
 const loadedImages = [];
